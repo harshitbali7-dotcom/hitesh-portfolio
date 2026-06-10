@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hitesh Bali — Product Marketing, GTM Strategy & Data Products</title>
+<meta name="description" content="Hitesh Bali — product marketing, go-to-market strategy, customer insights, and data-product portfolio across SaaS, HealthTech, EdTech, EV mobility, and AgriTech." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#12181f;
+    --ink-soft:#2a333d;
+    --paper:#f1f0ea;
+    --paper-2:#e7e6de;
+    --muted:#5c6571;
+    --hair:#d3d1c7;
+    --accent:#2a4fe0;       /* electric cobalt — momentum */
+    --accent-ink:#1c3bb0;
+    --gold:#b5893a;         /* recognition detail */
+    --display:"Space Grotesk", system-ui, sans-serif;
+    --body:"Inter", system-ui, sans-serif;
+    --mono:"JetBrains Mono", ui-monospace, monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--display);
+    font-size:12px;font-weight:600;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-ink);
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+  .mono{font-family:var(--mono)}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(140%) blur(8px);
+    background:color-mix(in srgb, var(--paper) 86%, transparent);
+    border-bottom:1px solid var(--hair);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .mono-mark{
+    font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .mono-mark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}
+  .nav-links{display:flex;gap:30px;font-size:14px;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--accent-ink)}
+  .nav-cta{
+    font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.02em;
+    padding:9px 16px;border:1px solid var(--ink);border-radius:2px;transition:.2s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:84px 0 64px;position:relative}
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(38px,7.2vw,82px);line-height:.98;letter-spacing:-.03em;
+    margin:26px 0 0;max-width:14ch;
+  }
+  .hero h1 .move{
+    position:relative;color:var(--accent-ink);white-space:nowrap;
+  }
+  .hero h1 .move::after{
+    content:"";position:absolute;left:0;bottom:.08em;height:3px;width:100%;
+    background:var(--accent);transform-origin:left;
+    animation:draw 1.1s .5s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .hero .lede{
+    font-size:clamp(16px,2vw,19px);color:var(--ink-soft);
+    max-width:54ch;margin-top:26px;
+  }
+  .hero .tags{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+  }
+  .hero .tags span{border:1px solid var(--hair);padding:5px 11px;border-radius:2px;background:#fff}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    margin-top:54px;background:var(--hair);border:1px solid var(--hair);
+  }
+  .stat{background:var(--paper);padding:22px 22px 20px}
+  .stat .num{font-family:var(--mono);font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;color:var(--ink)}
+  .stat .lab{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.35}
+  @media(max-width:620px){.stats{grid-template-columns:1fr}}
+
+  /* moving vector motif */
+  .vector{margin-top:64px;height:2px;width:100%;background:
+    repeating-linear-gradient(90deg,var(--hair) 0 8px,transparent 8px 16px);position:relative}
+  .vector::after{
+    content:"";position:absolute;top:-3px;left:0;width:64px;height:8px;
+    background:var(--accent);animation:slide 6s linear infinite;
+  }
+  @keyframes slide{from{left:-64px}to{left:100%}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:78px 0}
+  .sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:42px}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;line-height:1.05}
+  .sec-head p{color:var(--muted);max-width:60ch}
+
+
+
+  /* ---------- WORK SAMPLES ---------- */
+  .samples{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+  .sample-card{background:var(--paper);padding:28px;display:flex;flex-direction:column;gap:14px;min-height:330px;transition:background .25s, transform .25s}
+  .sample-card:hover{background:#fff;transform:translateY(-2px)}
+  .sample-card .sample-type{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+  .sample-card h3{font-family:var(--display);font-size:21px;line-height:1.15;letter-spacing:-.01em;font-weight:600}
+  .sample-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .sample-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:2px}
+  .sample-card li{font-size:13.5px;color:var(--ink-soft);display:flex;gap:8px;line-height:1.4}
+  .sample-card li::before{content:"•";color:var(--accent);font-family:var(--mono);font-weight:700}
+  .sample-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:10px}
+  .sample-link{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.01em;padding:9px 13px;border:1px solid var(--ink);border-radius:2px;transition:.2s;background:transparent;color:var(--ink)}
+  .sample-link:hover{background:var(--ink);color:var(--paper)}
+  .sample-link.secondary{border-color:var(--hair);color:var(--ink-soft)}
+  .sample-link.disabled{opacity:.62;cursor:not-allowed;border-color:var(--hair);color:var(--muted);background:var(--paper-2)}
+  .sample-link.disabled:hover{background:var(--paper-2);color:var(--muted)}
+  .sample-note{margin-top:24px;border-left:3px solid var(--gold);padding:14px 16px;background:var(--paper-2);font-size:14px;color:var(--ink-soft);max-width:92ch}
+  .sample-note b{color:var(--ink)}
+  .sample-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:28px}
+  .sample-mini div{background:#fff;padding:16px 14px}
+  .sample-mini strong{display:block;font-family:var(--mono);font-size:18px;color:var(--ink);letter-spacing:-.02em}
+  .sample-mini span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35;margin-top:4px}
+  @media(max-width:900px){.sample-grid{grid-template-columns:repeat(2,1fr)}.sample-mini{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.sample-grid{grid-template-columns:1fr}.sample-mini{grid-template-columns:1fr}}
+
+  /* ---------- ABOUT ---------- */
+  .about{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--paper-2)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+  .about-grid .big{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.6vw,27px);line-height:1.35;letter-spacing:-.01em}
+  .about-grid .big b{color:var(--accent-ink);font-weight:600}
+  .about-side{font-size:15px;color:var(--ink-soft)}
+  .about-side .row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--hair);font-family:var(--mono);font-size:13px}
+  .about-side .row span:first-child{color:var(--muted)}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* ---------- FLAGSHIP ---------- */
+  .flagship{background:var(--ink);color:var(--paper)}
+  .flagship .eyebrow{color:#7e92ff}
+  .flagship .eyebrow::before{background:#7e92ff}
+  .fl-top{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:end}
+  .fl-top h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,54px);line-height:1;letter-spacing:-.03em;margin-top:18px}
+  .fl-top h2 em{font-style:normal;color:#9fb0ff}
+  .fl-meaning{font-family:var(--mono);font-size:13px;color:#9aa6b4;border-left:2px solid var(--accent);padding-left:14px;line-height:1.5}
+  .fl-body{color:#c4ccd6;font-size:16px;max-width:62ch;margin-top:26px}
+
+  .fl-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:46px;background:#222c37;border:1px solid #222c37}
+  .fm{background:var(--ink);padding:22px 20px}
+  .fm .n{font-family:var(--mono);font-weight:700;font-size:clamp(22px,3vw,30px);color:#fff;letter-spacing:-.02em}
+  .fm .l{font-size:12px;color:#92a0af;margin-top:8px;line-height:1.4}
+  @media(max-width:860px){.fl-top{grid-template-columns:1fr;gap:24px;align-items:start}.fl-metrics{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.fl-metrics{grid-template-columns:1fr}}
+
+  .fl-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+  .fl-col h4{font-family:var(--display);font-weight:600;font-size:15px;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .fl-col h4 .ix{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
+  .fl-col p{font-size:14px;color:#aeb8c4;line-height:1.55}
+  @media(max-width:760px){.fl-cols{grid-template-columns:1fr;gap:22px}}
+
+  /* ---------- WORK GRID ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+  .card{background:var(--paper);padding:30px 28px 28px;display:flex;flex-direction:column;gap:14px;transition:background .25s;position:relative}
+  .card:hover{background:#fff}
+  .card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--accent-ink);text-transform:uppercase}
+  .card h3{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-.01em;line-height:1.15}
+  .card p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .card .foot{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}
+  .card .foot span{font-size:11px;font-family:var(--mono);color:var(--muted);border:1px solid var(--hair);padding:3px 8px;border-radius:2px}
+  .card .idx{position:absolute;top:24px;right:26px;font-family:var(--mono);font-size:12px;color:var(--hair)}
+  @media(max-width:680px){.work-grid{grid-template-columns:1fr}}
+
+  /* ---------- CAPABILITIES ---------- */
+  .caps{background:var(--paper-2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .caps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+  .cap h4{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+  .cap ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .cap li{font-size:14px;color:var(--ink-soft);display:flex;gap:8px}
+  .cap li::before{content:"→";color:var(--accent);font-family:var(--mono)}
+  @media(max-width:780px){.caps-grid{grid-template-columns:repeat(2,1fr);gap:28px}}
+  @media(max-width:440px){.caps-grid{grid-template-columns:1fr}}
+
+  /* ---------- AWARDS ---------- */
+  .award-list{display:flex;flex-direction:column;border-top:1px solid var(--hair)}
+  .award{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:baseline;
+    padding:22px 4px;border-bottom:1px solid var(--hair);transition:padding-left .25s}
+  .award:hover{padding-left:14px}
+  .award .yr{font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700}
+  .award .nm{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.4vw,22px);letter-spacing:-.01em}
+  .award .org{font-size:13px;color:var(--muted);text-align:right;max-width:24ch}
+  @media(max-width:620px){.award{grid-template-columns:auto 1fr}.award .org{display:none}}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper)}
+  .contact .eyebrow{color:#7e92ff}.contact .eyebrow::before{background:#7e92ff}
+  .contact h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,5.6vw,60px);letter-spacing:-.03em;line-height:1;margin:20px 0 12px;max-width:18ch}
+  .contact p{color:#b7c0cb;max-width:50ch;font-size:16px}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .clink{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.02em;
+    padding:13px 22px;border:1px solid #3a4654;border-radius:2px;transition:.2s;display:flex;align-items:center;gap:9px}
+  .clink.primary{background:var(--accent);border-color:var(--accent)}
+  .clink:hover{border-color:var(--accent);color:#fff;transform:translateY(-2px)}
+  .clink.primary:hover{background:var(--accent-ink)}
+
+  footer{padding:30px 0;font-size:13px;color:var(--muted);font-family:var(--mono)}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+
+  .hero .contact-links{display:flex;flex-wrap:wrap;gap:12px}
+  .hero .clink{color:var(--ink);border-color:var(--ink);background:transparent}
+  .hero .clink.primary{color:#fff;background:var(--accent);border-color:var(--accent)}
+  .hero .clink:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .hero h1 .move::after{transform:scaleX(1)}
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="mono-mark"><span class="dot"></span>Hitesh&nbsp;Bali</a>
+    <nav class="nav-links">
+      <a href="#olinia">Flagship</a>
+      <a href="#work">Work</a>
+      <a href="#samples">Samples</a>
+      <a href="#about">About</a>
+      <a href="#awards">Recognition</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Product Marketing · Go-to-Market · Strategy</div>
+    <h1>I turn customer insight into go-to-market strategy that&nbsp;<span class="move">moves.</span></h1>
+    <p class="lede">Marketing &amp; business development leader with 6+ years across EdTech, HealthTech, and SaaS. I build go-to-market from the customer up — segmentation, positioning, channel design, and phased rollout — where unit economics meet adoption.</p>
+    <div class="tags">
+      <span>HealthTech</span><span>EdTech</span><span>SaaS</span><span>Mobility / EV</span><span>AgriTech</span>
+    </div>
+
+    <div class="contact-links" style="margin-top:28px">
+      <a class="clink primary" href="#work">View work</a>
+      <a class="clink" href="#samples">View samples</a>
+      <a class="clink" href="#olinia">View flagship case</a>
+      <a class="clink" href="#contact">Contact</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$10M+</div><div class="lab">revenue driven across EdTech, HealthTech &amp; SaaS</div></div>
+      <div class="stat"><div class="num">6+ yrs</div><div class="lab">GTM, product marketing &amp; business development</div></div>
+      <div class="stat"><div class="num">MBA</div><div class="lab">UC Davis Graduate School of Management, 2026</div></div>
+    </div>
+
+    <div class="vector" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- FLAGSHIP: OLINIA -->
+<section class="flagship" id="olinia">
+  <div class="wrap">
+    <div class="eyebrow">Flagship case study · 2026</div>
+    <div class="fl-top">
+      <div>
+        <h2>Olinia — go-to-market for a <em>Mexico-focused urban EV initiative</em></h2>
+      </div>
+      <div class="fl-meaning">Olinia means "movement" in Nahuatl. This sanitized academic strategy case explores an ultra-affordable L7 micro-EV concept designed for dense-city mobility in Mexico.</div>
+    </div>
+    <p class="fl-body">I built the strategic master plan: who to sell to, how to reach them, and how to make the economics work for underbanked urban drivers. The answer was a financing-first, TCO-led approach — anchored on trusted retail access, executed through lean Experience Hubs, and scaled with digital direct. Public portfolio version is sanitized and excludes confidential client materials.</p>
+
+    <div class="fl-metrics">
+      <div class="fm"><div class="n">Margin model</div><div class="l">scenario-based unit economics and channel margin analysis</div></div>
+      <div class="fm"><div class="n">3</div><div class="l">channel GTM: retail · hubs · digital</div></div>
+      <div class="fm"><div class="n">Financing-first</div><div class="l">credit-access strategy for underbanked and fleet buyers</div></div>
+      <div class="fm"><div class="n">TCO-led</div><div class="l">price, LTV, and 36-month payment scenario modeling</div></div>
+    </div>
+
+    <div class="fl-cols">
+      <div class="fl-col">
+        <h4><span class="ix">01</span>Insight</h4>
+        <p>Short urban trips, brutal fuel costs, and a large solvent-but-underbanked driver base. The job to be done wasn't "buy a car" — it was "earn more per day and own faster."</p>
+      </div>
+      <div class="fl-col">
+        <h4><span class="ix">02</span>Strategy</h4>
+        <p>Anchor on SUPERISSSTE for government-backed trust and credit access; lead with TCO and same-day financing; sequence the rollout cargo → fleets → retail → ride-hailing to de-risk launch.</p>
+      </div>
+      <div class="fl-col">
+        <h4><span class="ix">03</span>Execution</h4>
+        <p>Replace high-CAPEX dealerships with hub-and-spoke Experience Hubs for delivery and service, plus a financing partner ecosystem (SOFOMs, Coppel, Kavak) matched to each customer profile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Selected work</div>
+      <h2>Insight to strategy to growth, across industries.</h2>
+      <p>Commercialization, market expansion, analytics, data-product, and growth work from full-time roles, consulting engagements, and fellowships across five industries.</p>
+    </div>
+
+    <div class="work-grid">
+      <div class="card">
+        <span class="idx">00</span>
+        <span class="tag">Data Product · GTM simulator</span>
+        <h3>Olinia GTM Launch Simulator</h3>
+        <p>Designed a portfolio-ready decision tool that converts GTM assumptions into launch scenarios — comparing channel mix, financing model, customer segment, margin pressure, and rollout risk for an urban EV market-entry strategy.</p>
+        <div class="foot"><span>Scenario model</span><span>Channel mix</span><span>TCO logic</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">01</span>
+        <span class="tag">HealthTech · Commercialization</span>
+        <h3>AminoSense</h3>
+        <p>Built a 5-year go-to-market roadmap for a HealthTech sensor at Barnstorm Foundry. Synthesized 20+ ethnographic interviews with AI-driven analysis to surface unmet needs among GLP-1 users — shaping positioning and an investor-facing commercialization case that influenced funding decisions.</p>
+        <div class="foot"><span>20+ interviews</span><span>5-yr roadmap</span><span>Investor-facing</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">02</span>
+        <span class="tag">AgriTech · Insight &amp; analytics</span>
+        <h3>Syngenta — IMP Consulting</h3>
+        <p>Led a 4-person team translating SQL analysis, sentiment data, and qualitative research into product-positioning recommendations for Syngenta. Built AI-powered grower personas and synthetic interview agents to test messaging and sharpen ICP-level pain points.</p>
+        <div class="foot"><span>Team lead</span><span>SQL + sentiment</span><span>AI personas</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">03</span>
+        <span class="tag">SaaS · Positioning &amp; growth</span>
+        <h3>Avaal Software Solutions</h3>
+        <p>Found underserved compliance and efficiency needs in the cross-border trucking market and built differentiated positioning for two new segments — contributing to 30% revenue growth and a 30% larger client base through segmentation and CRM-driven outreach.</p>
+        <div class="foot"><span>+30% revenue</span><span>+30% clients</span><span>+15% performance</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">04</span>
+        <span class="tag">HealthTech · Market development</span>
+        <h3>IBS America</h3>
+        <p>Drove dental-implant market expansion as a healthcare consultant — securing 10 new corporate clients through needs-based solution design, running educational seminars to speed adoption, and exceeding monthly targets by 20% for seven straight months.</p>
+        <div class="foot"><span>10 new clients</span><span>+20% vs target</span><span>7 months</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">05</span>
+        <span class="tag">EdTech · Business development</span>
+        <h3>BYJU'S</h3>
+        <p>Generated $1M in new business and onboarded 300+ accounts by reviving dormant CRM leads and closing high-value deals. Led and trained a 20-person sales team, optimizing pipeline workflows to $30K+ in weekly revenue.</p>
+        <div class="foot"><span>$1M new business</span><span>300+ accounts</span><span>20-person team</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">06</span>
+        <span class="tag">Leadership · UC Davis</span>
+        <h3>ASM President</h3>
+        <p>Elected president of ASM — a 501(c)(3) and one of UC Davis GSM's largest marketing-focused student orgs, serving 100+ MBAs. Lifted engagement 60% through marketing campaigns, mentoring, and cross-functional events with faculty and corporate partners.</p>
+        <div class="foot"><span>+60% engagement</span><span>100+ MBAs</span><span>501(c)(3)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WORK SAMPLES -->
+<section class="samples" id="samples">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Working samples</div>
+      <h2>Proof of work: strategy, research, analytics, and launch planning.</h2>
+      <p>Selected artifacts from MBA projects, consulting work, and commercialization research. Confidential client materials are summarized in sanitized form; public samples are linked where appropriate.</p>
+    </div>
+
+    <div class="sample-grid">
+      <article class="sample-card">
+        <span class="sample-type">HealthTech · Market research</span>
+        <h3>AminoSense Commercialization Sample</h3>
+        <p>Commercialization research for a finger-stick amino acid/protein monitoring concept focused on GLP-1 users and muscle/nutrition health.</p>
+        <ul>
+          <li>Designed social listening queries using Awario for GLP-1, protein, and muscle-loss conversations.</li>
+          <li>Built GLP-1 user personas: Transformation Seeker, Diabetes Optimizer, Aging Achiever, and Biohacker.</li>
+          <li>Synthesized patient interviews, KOL feedback, TAM logic, and beachhead-market recommendations.</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link secondary" href="#contact">Sanitized sample available on request</a>
+        </div>
+      </article>
+
+      <article class="sample-card">
+        <span class="sample-type">AgriTech · Consulting analytics</span>
+        <h3>Syngenta IMP Research Sample</h3>
+        <p>Customer, SME, competitor, and sentiment research for greenhouse vegetable seed positioning across key North American regions.</p>
+        <ul>
+          <li>Led a 4-person team and built a research plan across landscape analysis, competitor mapping, and interviews.</li>
+          <li>Created customer/SME heat maps, thematic coding, and sentiment insights to find white-space opportunities.</li>
+          <li>Used AI-simulated grower personas to stress-test interview guides and sharpen regional recommendations.</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link secondary" href="#contact">Sanitized sample available on request</a>
+        </div>
+      </article>
+
+      <article class="sample-card">
+        <span class="sample-type">Mobility · GTM strategy</span>
+        <h3>Olinia GTM Strategy Sample</h3>
+        <p>GTM strategy for an affordable urban EV concept in Mexico, built around TCO, financing access, and phased channel rollout.</p>
+        <ul>
+          <li>Mapped priority segments: taxi/ride-hailing drivers, cargo fleets, personal buyers, and fleet buyers.</li>
+          <li>Designed a 3-channel GTM: trusted retail access, Experience Hubs, and Digital Direct.</li>
+          <li>Built a TCO-led sales story around “earn more per day” and “own faster.”</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link" href="#olinia">View flagship case</a>
+          <a class="sample-link secondary" href="#contact">Full sample by request</a>
+        </div>
+      </article>
+
+      <article class="sample-card">
+        <span class="sample-type">Finance · Forecasting</span>
+        <h3>UPS vs. FedEx Financial Analysis</h3>
+        <p>Financial statement analysis comparing UPS and FedEx across DuPont decomposition, revenue forecast, cost drivers, and asset strategy.</p>
+        <ul>
+          <li>Reformulated operating vs. financing performance and compared ROE, RNOA, OPM, and ATO.</li>
+          <li>Built a bottom-up UPS Domestic Package revenue forecast using volume, revenue per piece, and operating days.</li>
+          <li>Analyzed labor, fuel, CapEx, fleet utilization, and intangible assets.</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link" href="work-samples/ups-fedex-financial-analysis.pdf" target="_blank" rel="noopener">Open PDF sample</a>
+        </div>
+      </article>
+
+      <article class="sample-card">
+        <span class="sample-type">Marketing · Launch plan</span>
+        <h3>SwiftServe Marketing Plan</h3>
+        <p>End-to-end marketing plan for an on-demand home and personal services marketplace in California launch cities.</p>
+        <ul>
+          <li>Defined problem, customer segments, user personas, value proposition, and customer journey.</li>
+          <li>Built CLV logic, perceptual maps, pricing strategy, and targeting/positioning recommendations.</li>
+          <li>Planned market entry, communication strategy, and marketing budget allocation.</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link" href="work-samples/swiftserve-marketing-plan.pdf" target="_blank" rel="noopener">Open PDF sample</a>
+        </div>
+      </article>
+
+      <article class="sample-card">
+        <span class="sample-type">AI workflow · Data product</span>
+        <h3>GTM / Product Data Demos</h3>
+        <p>Portfolio-ready demos that show how strategy can become an interactive product, not just a slide deck.</p>
+        <ul>
+          <li>Olinia GTM Launch Simulator: channel mix, margin pressure, financing, and launch-risk scenarios.</li>
+          <li>AI Follow-Up Agent: Google Sheets + Gmail + OpenAI workflow for personalized outreach drafts.</li>
+          <li>Prior Authorization Readiness Agent: healthcare workflow scoring, missing-docs logic, and routing recommendations.</li>
+        </ul>
+        <div class="sample-actions">
+          <a class="sample-link secondary" href="#contact">Demo walkthrough available</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="sample-mini">
+      <div><strong>5</strong><span>portfolio-ready artifacts added to the page</span></div>
+      <div><strong>2</strong><span>public PDF samples linked for recruiters</span></div>
+      <div><strong>3</strong><span>confidential/client cases summarized safely</span></div>
+      <div><strong>1</strong><span>clear data-product story for GTM roles</span></div>
+    </div>
+
+    <p class="sample-note"><b>Publishing note:</b> AminoSense and Syngenta materials contain confidential or client-sensitive details, so this public page shows sanitized proof of method and impact. Keep the full decks private unless you have permission to share them.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow" style="margin-bottom:22px">About</div>
+      <p class="big">I'm a marketing and business development leader who likes the unglamorous part of growth: <b>figuring out exactly who buys, why, and how to reach them.</b> Over 6+ years I've turned customer insight into go-to-market strategy across EdTech, HealthTech, and SaaS — driving $10M+ in revenue along the way.</p>
+    </div>
+    <div class="about-side">
+      <div class="row"><span>Focus</span><span>PMM · GTM · Strategy</span></div>
+      <div class="row"><span>Industries</span><span>Health · Ed · SaaS · Mobility</span></div>
+      <div class="row"><span>Toolkit</span><span>SQL · Tableau · R · Awario</span></div>
+      <div class="row"><span>Education</span><span>MBA · UC Davis</span></div>
+      <div class="row"><span>Open to</span><span>PMM · GTM · Product · Strategy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What I do</div>
+      <h2>The work, broken down.</h2>
+    </div>
+    <div class="caps-grid">
+      <div class="cap">
+        <h4>Go-to-Market</h4>
+        <ul><li>Segmentation</li><li>Channel strategy</li><li>Phased rollout</li><li>Pricing &amp; TCO</li></ul>
+      </div>
+      <div class="cap">
+        <h4>Product Marketing</h4>
+        <ul><li>Positioning</li><li>Value proposition</li><li>Messaging by segment</li><li>Launch planning</li></ul>
+      </div>
+      <div class="cap">
+        <h4>Research &amp; Insight</h4>
+        <ul><li>Customer interviews</li><li>Personas</li><li>Competitive analysis</li><li>Market sizing</li></ul>
+      </div>
+      <div class="cap">
+        <h4>Analytics</h4>
+        <ul><li>SQL</li><li>Tableau</li><li>R / RStudio</li><li>Awario · A/B testing</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Recognition</div>
+      <h2>Fellowships &amp; leadership awards.</h2>
+    </div>
+    <div class="award-list">
+      <div class="award">
+        <span class="yr">2025</span>
+        <span class="nm">Stephen G. &amp; Shelley A. Newberry Distinguished Fellowship</span>
+        <span class="org">UC Davis Graduate School of Management</span>
+      </div>
+      <div class="award">
+        <span class="yr">2025</span>
+        <span class="nm">Robert H. Smiley Leadership Award</span>
+        <span class="org">UC Davis Graduate School of Management</span>
+      </div>
+      <div class="award">
+        <span class="yr">2025</span>
+        <span class="nm">GSMAA Student Fellowship</span>
+        <span class="org">UC Davis GSM Alumni Association</span>
+      </div>
+      <div class="award">
+        <span class="yr">2025</span>
+        <span class="nm">National Black MBA Association Fellow</span>
+        <span class="org">NBMBAA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Let's talk go-to-market.</h2>
+    <p>Open to product marketing, GTM, product, and strategy roles. The fastest way to reach me is email or LinkedIn.</p>
+    <div class="contact-links">
+      <a class="clink primary" href="mailto:hbali@ucdavis.edu">✉ hbali@ucdavis.edu</a>
+      <a class="clink" href="https://www.linkedin.com/in/balihitesh/" target="_blank" rel="noopener">in · LinkedIn</a>
+      <a class="clink" href="https://drive.google.com/drive/folders/1R1EIcJoCZ8VJP-ZpL3FuBGCw1zgGjj__" target="_blank" rel="noopener">↓ Résumé</a>
+      <a class="clink" href="https://github.com/" target="_blank" rel="noopener">⌘ GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Hitesh Bali</span>
+    <span>Built to move →</span>
+  </div>
+</footer>
+
+</body>
+</html>
